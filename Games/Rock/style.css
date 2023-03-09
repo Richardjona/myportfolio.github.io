@@ -1,0 +1,33 @@
+body{
+    font: 'lato', sans-serif;
+    background: #88989c;
+    margin: 0;
+    padding: 0;
+}
+.board{
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 20%;
+}
+h1{
+    color:orangered;
+    font-weight: bold;    
+}
+.button{
+    border: 2px solid orangered;
+    border-radius: 30px;
+    width: 120px;
+    font-size: 20px;
+    transition: .4s;
+}
+.button:hover{
+    background-color: orangered;
+    color: white;
+    border: 2px solid white;
+}
