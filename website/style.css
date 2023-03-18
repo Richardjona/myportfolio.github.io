@@ -1,0 +1,105 @@
+body{
+    margin: 0;
+    padding: 0;
+    background:linear-gradient(-90deg, rgb(164, 164, 168),rgb(224, 222, 219));
+}
+
+#nav{
+    position: relative;
+    margin: 1rem;
+    padding: 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    height: 2.126rem;
+    width: 95%;
+    background-color: rgb(224, 222, 219);
+    justify-items: center;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 0 0 0 2px rgb(255, 255,255), 0.3em 0.3em 1em rgba(0,0,0,0.3);
+    
+}
+.logo{
+    font-size: 1.875rem;
+}
+span{
+    color: rgb(150, 96, 109);
+    font-weight: 300;
+}
+.navigate > a {
+    text-decoration: none;
+    color: /*rgb(150, 96, 109)*/ black;
+    font-size: 1.25rem;
+    text-align: center;
+    justify-content: space-between;
+    margin: 0.625rem;
+    transition: all 0.5s ease-out;
+}
+.navigate > a:hover, a:focus{
+    color: /*rgb(211, 89, 19)*/ rgb(150, 96, 109);
+    font-size: 1.3rem;
+ 
+}
+
+.welcome{
+    grid-template-columns: 2;
+    position: absolute;
+    width: 500px;
+    margin-left: 1.25rem ;
+    top: 20%;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+.name{
+    font-family:cursive;
+
+}
+
+.ric{
+    width: 100%;
+    font-size:4rem;
+}
+.welcome > p{
+    margin-top: 10px;
+}
+
+#email{
+    width: 20.75rem;
+    height: 1.5rem;
+    text-align: left;
+    padding: 8px 20px;
+    color: rgb(106, 121, 93);
+    border-radius: 30px;
+}
+
+#btn{
+    
+    background-color:rgb(150, 96, 109);
+    color: white;
+    border-radius: 40px;
+    height: 30px;
+    width: 6.25rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    margin-left: -112px;
+    padding: 2px;
+    transition: .5s;
+    box-shadow: inset 0 -1em 1em rgba(236, 226, 226, 0.1);
+    
+}
+#btn:hover{
+    background-color: #332f2f;
+    border: 2px solid rgb(214, 78, 101);
+    color: rgb(150, 96, 109); 
+    cursor: pointer;
+}
+
+.our_services{
+    margin-top: 50%;
+    margin-left: 1.25rem;
+    color: rgb(150, 96, 109);
+}
+.Services{
+    display: flex;
+
+    
+}
