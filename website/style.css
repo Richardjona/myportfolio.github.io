@@ -2,48 +2,50 @@ body{
     margin: 0;
     padding: 0;
     background:linear-gradient(-90deg, rgb(164, 164, 168),rgb(224, 222, 219));
+    width: 100vw;
 }
 
 #nav{
-    position: relative;
+    position: fixed;
+    top: 1px;
+    z-index: 1;
     margin: 1rem;
     padding: 0.625rem;
     display: flex;
     justify-content: space-between;
     height: 2.126rem;
-    width: 95%;
     background-color: rgb(224, 222, 219);
     justify-items: center;
     box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 0 0 0 2px rgb(255, 255,255), 0.3em 0.3em 1em rgba(0,0,0,0.3);
     
 }
 .logo{
-    font-size: 1.875rem;
+    font-size: 1.875em;
 }
 span{
-    color: rgb(150, 96, 109);
+    color:red;/*  rgb(150, 96, 109); */
     font-weight: 300;
 }
 .navigate > a {
     text-decoration: none;
     color: /*rgb(150, 96, 109)*/ black;
-    font-size: 1.25rem;
+    font-size: 1em;
     text-align: center;
+    align-items: center;
     justify-content: space-between;
     margin: 0.625rem;
     transition: all 0.5s ease-out;
 }
 .navigate > a:hover, a:focus{
-    color: /*rgb(211, 89, 19)*/ rgb(150, 96, 109);
+    color: red /*rgb(211, 89, 19)*/ /*rgb(150, 96, 109)*/;
     font-size: 1.3rem;
  
 }
 
 .welcome{
-    grid-template-columns: 2;
-    position: absolute;
-    width: 500px;
-    margin-left: 1.25rem ;
+    position:absolute;
+    width: 100%;
+    margin-left: 1.25em ;
     top: 20%;
     font-size: 2rem;
     line-height: 3rem;
@@ -54,25 +56,80 @@ span{
 }
 
 .ric{
-    width: 100%;
+    width:50%;
     font-size:4rem;
 }
+
 .welcome > p{
-    margin-top: 10px;
+    font-size:1.25rem;
+    margin-top: 0.625em;
 }
 
 #email{
-    width: 20.75rem;
-    height: 1.5rem;
+    width: 18.75em;
+    height: 1rem;
     text-align: left;
     padding: 8px 20px;
-    color: rgb(106, 121, 93);
+    color:black;
     border-radius: 30px;
 }
 
 #btn{
     
-    background-color:rgb(150, 96, 109);
+    background-color:red/*rgb(150, 96, 109)*/;
+    color: white;
+    border-radius: 40px;
+    height: 30px;
+    width: 6.25em;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    margin-left: -7em;
+    padding: 2px;
+    transition: .5s;
+    box-shadow: 0 0 10px;
+    
+}
+#btn:hover{
+    background-color: transparent;
+    border: 2px solid rgb(214, 78, 101);
+    color: black;
+    cursor: pointer;
+}
+
+.our_services{
+    width: 100%;
+    text-align: center;
+    margin-top: 400px;
+}
+.Services {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.digital{
+    margin: 1.25rem;
+    direction: flex;
+    height: 200px;
+    width: 500px;
+    border: 3px solid rgb(211, 194, 211) ;
+    background: linear-gradient(rgb(236, 236, 243), rgb(112, 105, 126), white);
+    border-radius: 20px;
+    box-shadow: 0 0 10px;
+    
+}
+
+.digital > h1{
+    font-size: 1rem;
+    text-shadow: 0 1px 2px rgb(150, 96, 109) ;
+
+}
+.digital > button{
+    margin-top: 100px;
+    background-color:red;
     color: white;
     border-radius: 40px;
     height: 30px;
@@ -80,26 +137,99 @@ span{
     text-decoration: none;
     border: 2px solid transparent;
     font-weight: bold;
-    margin-left: -112px;
     padding: 2px;
     transition: .5s;
-    box-shadow: inset 0 -1em 1em rgba(236, 226, 226, 0.1);
-    
+    box-shadow: 0 0 10px;
 }
-#btn:hover{
-    background-color: #332f2f;
-    border: 2px solid rgb(214, 78, 101);
-    color: rgb(150, 96, 109); 
+
+.digital > button:hover{
+    background-color: transparent;
+    color: rgb(136, 96, 96); 
+    cursor: pointer;
+
+}
+.footer{
+    background-color: rgba(94, 80, 80, 0.336);
+    height: 100px;
+    text-align: center;
+    justify-content: center;
+   
+}
+.foo{
+    padding-top: 30px;
+}
+.button{
+    background-color:red;
+    color: white;
+    border-radius: 40px;
+    height: 30px;
+    width: 6.25rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 2px;
+    transition: .5s;
+    box-shadow: 0 0 10px;
+}
+.button:hover{
+    background-color: transparent;
+    color: black; 
     cursor: pointer;
 }
 
-.our_services{
-    margin-top: 50%;
-    margin-left: 1.25rem;
-    color: rgb(150, 96, 109);
-}
-.Services{
-    display: flex;
-
+#about{
+    background:white;
+    margin:1em;
+    padding: 1em;
+    box-shadow: 0 0 5px black;
+    }
     
+h2{
+    text-shadow: 5px 5px 5px rgb(167, 136, 136), 0 0 0 rgb(102, 42, 42);
+    margin: 1.25rem;
+     display:flex;
+    justify-content:center;
+  }
+.About-us{
+display: flex;
+justify-content: space-around;
+margin: 1.25rem;
+background:black;
+color:white;
+padding:10px;
+box-shadow: 5px 5px 5px rgb(102, 42, 42);
+border-radius: 10px;
+}
+#im{
+    margin: 1.25rem;
+    display:flex;
+    justify-content:center;
+
+    }
+#img{
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    float: inline-end;    
+}
+#content{
+    line-height: 30px;
+    padding: 1em;
+    text-align: justify;
+}
+
+.icon{
+    background-color: rgb(66, 55, 55);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    
+}
+#icons {
+    margin-top: 30px;
+ 
+}
+#icons > div{
+    margin: 30px;
+    display: inline;
 }
