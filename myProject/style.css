@@ -1,0 +1,92 @@
+
+.allcolors{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25rem;
+    height: 6.25rem;
+
+
+}
+#blue{
+    background-color: blue;
+    width: 6.25rem;
+    
+}
+#green{
+    background-color: green;
+    width: 6.25rem;
+}
+#purple{
+    background-color: purple;
+    width: 6.25rem;
+}
+#yellow{
+    background-color: yellow;
+    width: 6.25rem;
+}
+#pause{
+    margin: 5px 0;
+    padding: 0.3125em;
+    font-size: 1rem;
+    font-weight: 100;
+    color: black; 
+    background-color: rgb(236, 167, 139);   
+    box-shadow: 0 -1px 5px black;
+}
+
+
+.Tipcalculator{
+    border: 2px solid green;
+    margin: 1.875em 0.625em;
+    width: 20em;
+    padding: 0.3125em;
+    background-color: rgb(235, 226, 214);
+}
+
+.total{
+    margin: 0.625rem 0;
+ }
+#total{
+ padding: 0.22em;
+ border-radius: 10px;background-color: rgb(199, 228, 228);
+ font-weight: 500;
+ color: red;
+    
+}
+#tipamount{
+    padding: 0.22em;
+    border-radius: 10px;background-color: rgb(199, 228, 228);
+    font-weight: 500;
+    color: rgb(38, 0, 255);
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+p{
+    margin-bottom: 0.5em;
+}
+#people_heading, #totalperson{
+    color: rgb(57, 97, 143);
+    text-transform: capitalize;
+}
+
+.btn{
+    padding: 0.3125em;
+    font-size: 1rem;
+    font-weight: 1000;
+    color: green; 
+    background-color: rgb(236, 167, 139);   
+    box-shadow: 0 -1px 5px black;
+    transition: .5 ease-in-out;
+}
+.btn:hover{
+    background-color: transparent;
+}
+
+#ppl, #tlperson{
+    padding: 1em;
+    color: rgb(7, 7, 7);
+}
