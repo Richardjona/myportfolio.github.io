@@ -50,23 +50,114 @@ function calcuatesTip(){
         all = totalPersons.innerText = total_persons
 //adds the number of people to share the bill equally and make payment
         plusBtn.addEventListener("click", ()=>{
-            people = peopleNumber.innerText = Number(numberofPeople +=1)
+            people = peopleNumber.innerText = Number(numberofPeople += 1)
             addPeople = all/people
             totalPersons.innerText = `#${Math.ceil(addPeople)}`
             })
 
             minusBtn.addEventListener("click", ()=>{
                 if(numberofPeople > 1){
-                    reducepeople = peopleNumber.innerText = Number(numberofPeople -=1)
+                    reducepeople = peopleNumber.innerText = Number(numberofPeople -= 1)
                     reducedprice = all/reducepeople
                     totalPersons.innerText = `#${Math.ceil(reducedprice)}`
                 }
-               
-                            
+                             
             })
-        
+   }
+calcuatesTip()
+
+
+//rock paper and scissors
+const rps = document.querySelectorAll(".rps")
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
+const resultdiv = document.getElementById("result")
+const scorediv = document.getElementById("scores")
+const compchoice = document.getElementById("computerchoice")
+const playerch = document.getElementById("playerchoice")
+
+let result = 0;
+let score = 0;
+let getcomputerchoice;
+let getPlayer;
+
+
+//playerChoice = {rock: "rock", paper:"paper", scissors:"scissors"}
+const computer = ["Rock", "Paper", "Scissors"]
+
+   computerChoice =()=>{
+    const random = Math.floor(Math.random()*computer.length)
+    getcomputerchoice = computer[random]
+    compchoice.innerText = `Computer:  ${getcomputerchoice}` 
+   }
+   
+user = ()=>{
+   
+    rps.forEach(btn => {
+     btn.onclick = (e) =>{ 
+         getPlayer =  e.target.id
+          playerch.innerText = `player: ${getPlayer}`
+          computerChoice()
+          if(getPlayer =='Rock' && getcomputerchoice  == 'Paper'){
+            result = " you win"    
+            score += 1
+            }else if(getPlayer === getcomputerchoice){
+                result = "You draw"
+                score += 0
+            }else if(getPlayer =='Rock' && getcomputerchoice =='Scissors'){
+                    result = "You win"
+                    score += 1
+            }else if(getPlayer === 'Scissors' && getcomputerchoice === 'paper'){
+                result = "you win"    
+                score += 1
+
+            }else{
+                result = "you Lose"    
+                score -= 1
+            }
+                scorediv.innerText =  `Your score: ${score}`
+                resultdiv.innerText = result
+            return score, result         
+        } })   
+}
+
+function clearGame(){
+    btn = document.getElementById('btn').onclick=()=>{
+        scorediv.innerText = ''
+        resultdiv.innerText = ''
+        compchoice.innerText = ''
+        playerch.innerText = ''
+        }
     }
+    
+user()
+clearGame()
 
+/**superhero app*/
+const randomHerobtn = document.getElementById('random')
+const heroNameSearch = document.getElementById("heroName")
+const searchBtn = document.getElementById("btnHero")
+let imgHero = document.getElementById('imgHero')
+const Baseurl ='https://superheroapi.com/api.php/205776685341168' 
+let heroId;
+let heroName = '/search'
+let randomH
 
-console.log(calcuatesTip())
+function generateHeroesName(randomH){
+    randomH = Math.floor(Math.random()*733)
+    console.log(randomH)
+    fetch(`${Baseurl}/${randomH}`)
+    .then(response => response.json())
+    .then(json => {imgHero.innerHTML = `<img src =" ${json.image.url}" height= 200 width= 300 />`})
+}
+randomHerobtn.addEventListener("click", generateHeroesName)
 
+searchHeroByName = (name) =>{
+    name = heroNameSearch.value
+    fetch(`${Baseurl}/${heroName}/${name}`)
+    .then(response => response.json())
+    .then(json => {{imgHero.innerHTML = `<img src =" ${json.results[0].image.url}" height= 200 width= 300 />`}
+console.log(json.results[0].powerstats.durability)}) 
+}
+searchBtn.addEventListener("click", searchHeroByName)
