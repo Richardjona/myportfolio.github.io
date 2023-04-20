@@ -139,6 +139,8 @@ const randomHerobtn = document.getElementById('random')
 const heroNameSearch = document.getElementById("heroName")
 const searchBtn = document.getElementById("btnHero")
 let imgHero = document.getElementById('imgHero')
+let herostats = document.getElementById("herostats")
+
 const Baseurl ='https://superheroapi.com/api.php/205776685341168' 
 let heroId;
 let heroName = '/search'
@@ -149,7 +151,22 @@ function generateHeroesName(randomH){
     console.log(randomH)
     fetch(`${Baseurl}/${randomH}`)
     .then(response => response.json())
-    .then(json => {imgHero.innerHTML = `<img src =" ${json.image.url}" height= 200 width= 300 />`})
+    .then(json => {
+        console.log(json.powerstats)
+
+        divname =`<h1 id ="hename">${json.name}</h1>` 
+        intelligence = json.powerstats.intelligence
+        strength =  json.powerstats.strength
+        speed = json.powerstats.speed
+        durability=  json.powerstats.durability
+        imgHero.innerHTML = `${divname}<img src =" ${json.image.url}" height= 200 width= 300 />
+        <div><li>Intelligence:${intelligence}</li>
+        <li>Strength: ${strength}</li>
+        <li>speed:${speed}</li>
+        <li>durability: ${durability}</li></div>`
+   // herostats.innerHTML = `<div id ="intel">Intelligence:"${json.powerstats.intelligence}"</div>`    
+})
+   
 }
 randomHerobtn.addEventListener("click", generateHeroesName)
 
@@ -157,7 +174,22 @@ searchHeroByName = (name) =>{
     name = heroNameSearch.value
     fetch(`${Baseurl}/${heroName}/${name}`)
     .then(response => response.json())
-    .then(json => {{imgHero.innerHTML = `<img src =" ${json.results[0].image.url}" height= 200 width= 300 />`}
-console.log(json.results[0].powerstats.durability)}) 
+    .then(json => {{
+        intelligence = json.results[0].powerstats.intelligence
+        strength =  json.results[0].powerstats.strength
+        speed = json.results[0].powerstats.speed
+        durability= json.results[0].powerstats.durability
+        console.log(json)
+        divname = `<h1 id="hename">${json.results[0].name}</h1>`
+        imgHero.innerHTML = `${divname}<img id ="imageh" src =" ${json.results[0].image.url}" height= 200 width= 300 />
+        <div><li>Intelligence:${intelligence}</li>
+        <li>Strength: ${strength}</li>
+        <li>speed:${speed}</li>
+        <li>durability: ${durability}</li></div>`
+        
+    }
+    
+}) 
+   // herostats.innerHTML = `<div>Intelligence${json.results[0].powerstats.intelligence}</div>`
 }
 searchBtn.addEventListener("click", searchHeroByName)
