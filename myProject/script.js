@@ -15,8 +15,9 @@ const counter = colors.forEach(color => {color.onclick = ()=>{
 })
 
 pause.onclick = () => {
-    colors.forEach(color => color.innerText = "")
-}
+    colors.forEach(color => color.innerText = ""
+    )
+  }
 
 //enter bill total
 //enter tip amount
@@ -134,7 +135,9 @@ function clearGame(){
 user()
 clearGame()
 
-/**superhero app*/
+/**superhero app
+ * An App that enables you search for heroes acoording to their power stats
+*/
 const randomHerobtn = document.getElementById('random')
 const heroNameSearch = document.getElementById("heroName")
 const searchBtn = document.getElementById("btnHero")
@@ -159,7 +162,7 @@ function generateHeroesName(randomH){
         strength =  json.powerstats.strength
         speed = json.powerstats.speed
         durability=  json.powerstats.durability
-        imgHero.innerHTML = `${divname}<img src =" ${json.image.url}" height= 200 width= 300 />
+        imgHero.innerHTML = `${divname}<img src =" ${json.image.url}" height= 200 width= 200 />
         <div><li>Intelligence:${intelligence}</li>
         <li>Strength: ${strength}</li>
         <li>speed:${speed}</li>
@@ -190,6 +193,70 @@ searchHeroByName = (name) =>{
     }
     
 }) 
-   // herostats.innerHTML = `<div>Intelligence${json.results[0].powerstats.intelligence}</div>`
+ 
+// herostats.innerHTML = `<div>Intelligence${json.results[0].powerstats.intelligence}</div>`
 }
 searchBtn.addEventListener("click", searchHeroByName)
+
+
+/**
+ * a stopwatch app.
+ */
+
+const timerid = document.getElementById("timer")
+const startcounter = document.getElementById("starttimer")
+const reset = document.getElementById("resettimer")
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
+
+function timeCount(){
+    seconds++;
+
+   if(seconds/60 == 1) {
+    minutes++
+    seconds = 0;
+
+}
+    if(minutes/60 == 1){
+        hours++
+        minutes = 0;
+    
+    } 
+   sec = seconds < 10 ? "0"+seconds : seconds
+    min = minutes < 10? "0"+ minutes : minutes
+    hr =hours < 10? "0"+ hours: hours
+
+    timerid.innerText = hr + ":" + min + ":" + sec
+    
+    }
+    
+   
+    timerStatus = "stopped"
+   run = null;
+      startcounter.addEventListener("click",()=> {
+        if (timerStatus == "stopped"){
+            run = setInterval(timeCount, 100)
+            startcounter.innerText = "Started"
+            timerStatus = "started"
+           
+        }else {
+            clearInterval(run)
+            startcounter.innerText = "Stopped"
+            timerStatus ="stopped"
+        }
+      } )
+    reset.addEventListener("click", ()=>{
+          clearInterval(run)
+          minute = 0
+          seconds = 0
+          hours = 0
+          timerid.innerText = "00" + ":" + "00" + ":" + "00"
+    })
+   
+    //Accordion
+
+    const accordion = document.getElementsByClassName("content")
+   console.log(accordion)
+for(i = 0; i < accordion.length; i++){
+    accordion[i].addEventListener('click', function () { this.classList.toggle('active')})}

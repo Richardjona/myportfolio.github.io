@@ -1,39 +1,44 @@
-*{
+body{
+    background-color: rgb(181, 197, 194);
     font-style:normal, arial;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 .allcolors{
     display: flex;
     flex-wrap: wrap;
-    width: 25rem;
-    height: 6.25rem;
-
+    width: 40rem;
+    height: 7.25rem;
+    margin: 30px;
 
 }
 #blue{
     background-color: blue;
-    width: 6.25rem;
+    width: 10.25rem;
     height: 6rem;
     
 }
 #green{
     background-color: green;
-    width: 6.25rem;
+    width: 10.25rem;
     height: 6rem;
 }
 #purple{
     background-color: purple;
-    width: 6.25rem;
+    width: 10.25rem;
     height: 6rem;
 }
 #yellow{
     background-color: yellow;
-    width: 6.25rem;
+    width: 10.25rem;
     height: 6rem;
 }
 #pause{
-    margin: 10px 0;
-    padding: 0.3125em;
-    font-size: 1rem;
+    margin: 10px 10px;
+    padding: .9125em;
+    font-size: 1em;
     font-weight: 100;
     color: black; 
     background-color: rgb(236, 167, 139);   
@@ -43,10 +48,17 @@
 
 .Tipcalculator{
     border: 2px solid green;
-    margin: 3.875em 0.625em;
-    width: 20em;
+    margin: 3.875em;
+    width: 35em;
+    height: auto;
     padding: 0.3125em;
     background-color: rgb(235, 226, 214);
+}
+
+.Tipcalculator h1{
+    font-size: 30px;
+    text-align: center;
+    color: orangered;
 }
 
 .total{
@@ -194,6 +206,7 @@ p{
     margin: 10px;
     box-shadow: 0 0 5px black;
     padding: 2em;
+    flex-wrap: wrap;
 }
 
 #imageh{
@@ -233,3 +246,93 @@ div >li::marker{
     padding: 0.245em;
     box-shadow: 0 0 5px red;
 }
+
+#stopwatch{
+    border: 2px solid black;
+    border-radius: 30px;
+    width: 60%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(38, 38, 85, 0.2);
+   }
+   #timer{
+    font-size: 50px;
+    margin-bottom: 20px;
+   }
+   #timerbtn{
+    padding: 20px;
+    text-align: center;
+
+}
+
+   #starttimer, #resettimer, #stopCounter{
+        padding: 0.5em;
+        border: 2px solid black;
+        border-radius: 10px;
+        color: white;
+        font-size: 1.4em;
+        cursor: pointer;
+
+   }
+   #starttimer{
+        background-color: green;
+    }
+    #resettimer{
+        background-color: red;
+    }
+
+    .accordion{
+        display: flex;
+        width: 60%;
+        border: 2px solid black;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 0 10px black;
+        margin: 10px;
+   
+    }
+    .content-body > h1{
+        font-size: 30px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    .questions{
+        position: relative;
+        font-weight: 500;
+        font-size: 23px;
+        text-transform: capitalize;
+        border-bottom: 1px solid black;
+        margin-bottom: 20px;
+        cursor: pointer;
+        transition: .5s;
+    
+    }
+    .questions::after{
+        content: "+";
+        position: absolute;
+        right: 0px;
+        justify-content: space-between;
+        transition: .5s;
+    }
+    .accordion .content-body{
+        padding: 1em;
+    }
+    .answers{
+        height: 0;
+        overflow: hidden;
+        transition: .5s;
+        margin-bottom: 10px;
+    }
+    .content.active .answers{
+        height: auto;
+        overflow: visible;
+        line-height: 1.5;
+    }
+    .content.active .questions::after{
+        content: "-";
+      }
+      .content.active .questions{
+        font-size: 15px;
+      }
